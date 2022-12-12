@@ -1,0 +1,44 @@
+version: 2
+macros:
+  - name: generate_surrogate_key
+    description: >
+      Generates a surrogate key based on list of fields
+    arguments:
+      - name: fields
+        description: Name of columns to be used for creating surrogate key
+        type: list
+
+  - name: parse_date
+    description: >
+      Parses a string into datetime
+    arguments:
+      - name: column_name
+        description: Columns to be parsed into datetime object
+        type: string
+      - name: format
+        description: datetime format
+        type: string
+
+  - name: get_amount
+    description: >
+      Utility function to calculate amount from percentage
+    arguments:
+      - name: marked_price
+        type: string
+        description: Name of field that holds the amount
+      - name: percent
+        description: percentage value
+        type: string
+  - name: calculate_selling_price
+    description: >
+      Utility function to calculate selling price of the product
+    arguments:
+      - name: marked_price
+        type: string
+        description: Name of field that holds the amount
+      - name: discount
+        description: discount percentage column name
+        type: string
+      - name: tax
+        description: tax percentage column name
+        type: string

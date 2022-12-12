@@ -1,0 +1,56 @@
+version: 2
+models:
+  - name: stg__customers
+    description: Customer table in staging layer
+    columns:
+      - name: customer_key
+        description: '{{ doc("customer_key") }}'
+        tests:
+          - not_null
+      - name: name
+        description: Name of the customer
+      - name: address
+        description: Customer's address
+      - name: nation_key
+        description: '{{ doc("nation_key") }}'
+      - name: phone
+        description: Phone number
+      - name: account_balance
+        description: '{{ doc("account_balance") }}'
+      - name: market_segment
+        description: Market segment
+      - name: comment
+        description: Customer's comment
+  - name: stg__lineitem
+  - name: stg__nations
+  - name: stg__orders
+    columns:
+      - name: order_key
+        description: '{{ doc("order_key") }}'
+        tests:
+          - not_null
+      - name: customer_key
+        description: '{{ doc("customer_key") }}'
+        tests:
+          - not_null
+      - name: order_status
+        description: Status of the order
+      - name: total_price
+        description: Total price of the order
+      - name: order_date
+        description: Date when the order was placed
+        # tests:
+        # - check_date_format:
+        #     format: '%Y-%m-%d %H:%i:%S.%f'
+      - name: order_priority
+        description: Priority of the order
+      - name: clerk
+        description: Clerk who processed the order
+      - name: ship_priority
+        description: Priority of the shipment
+      - name: comment
+        description: Comments in the order
+  - name: stg__part_suppliers
+  - name: stg__parts
+  - name: stg__regions
+  - name: stg__suppliers

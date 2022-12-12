@@ -1,0 +1,30 @@
+name: "tpch"
+version: "1.0.0"
+config-version: 2
+profile: "tpch"
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+vars:
+  start_date: "1900-01-01"
+  end_date: "2030-01-01"
+  dbt_metrics_calendar_model: metrics_calendar
+models:
+  tpch:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+    reports:
+      +materialized: table

@@ -1,0 +1,11 @@
+tpch:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://nischay-tpch-dbt/dbt/
+      region_name: ap-southeast-2
+      schema: tpch_dbt
+      database: awsdatacatalog
+      aws_profile_name: tdf-datajam
+      work_group: primary
