@@ -1,0 +1,14 @@
+version: 2
+sources:
+  - name: tpch_raw
+    description: RAW tpch data
+    database: AWSDataCatalog
+    tables:
+      - name: customers
+      - name: lineitem
+      - name: parts
+      - name: part_suppliers
+      - name: regions
+      - name: suppliers
+      - name: orders
+      - name: nations

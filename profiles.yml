@@ -1,0 +1,11 @@
+tpch:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: "{{ env_var('S3_STAGING_DIR') }}"
+      region_name: ap-southeast-2
+      schema: tpch_dbt
+      database: "{{ env_var('DATABASE') }}"
+      aws_profile_name: "{{ env_var('AWS_PROFILE') }}"
+      work_group: primary
