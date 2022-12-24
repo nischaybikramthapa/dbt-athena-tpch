@@ -16,7 +16,6 @@ clean-targets:
 vars:
   start_date: "1900-01-01"
   end_date: "2030-01-01"
-  dbt_metrics_calendar_model: metrics_calendar
 models:
   tpch:
     staging:
