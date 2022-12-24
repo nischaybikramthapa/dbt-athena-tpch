@@ -24,14 +24,3 @@ group by year, order_priority
 order by year
 )
 select * from final
-
-
-
-/*
-tpch-dbt demo
- - kimball method
- - some reporting table
-real-time streaming
-Newsletter automation - Work on this architecture
-
-*/
